@@ -10,7 +10,7 @@ module I18nCountrySelect
 		def country_code_select(priority_countries, options, html_options)
 			selected = object.send(@method_name)
       
-      country_translations = COUNTRY_CODES.map{|code| [I18n.t(code, :scope => :countries), code]}
+      country_translations = COUNTRY_CODES.map{|code| [I18n.t(code, :scope => :countries), code]}.sort_alphabetical
 
 			countries = ""
 			if priority_countries
