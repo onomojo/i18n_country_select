@@ -8,7 +8,7 @@ module I18nCountrySelect
 
     # Adapted from Rails country_select. Just uses country codes instead of full names.
     def country_code_select(priority_countries, options, html_options)
-      selected = object.send(@method_name)
+      selected = object.send(@method_name) if object.respond_to?(@method_name)
       
       country_translations = COUNTRY_CODES.map{|code| [I18n.t(code, :scope => :countries), code]}.sort_alphabetical_by(&:first)
 
