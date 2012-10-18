@@ -15,14 +15,14 @@ module I18nCountrySelect
                     'LY','LI','LT','LU','LB','LS','LR','LY','LI','LT',
                     'LU','MO','MG','MW','MY','MV','ML','MT','MH','MQ',
                     'MR','MU','MX','FM','MD','MC','MN','MS','MA','MZ',
-                    'MM','NA','NR','NP','AN','NL','NC','NZ','NI','NE',
+                    'MM','NA','NR','NO','NP','AN','NL','NC','NZ','NI','NE',
                     'NG','NU','NF','MP','OM','PK','PW','PA','PG','PY',
                     'PE','PH','PN','PL','PF','PT','PR','QA','RE','RO',
                     'RU','RW','LC','WS','SM','SA','SN','SC','SL','SG',
                     'SK','SI','SB','SO','ZA','ES','LK','SH','PM','ST',
                     'KN','VC','SD','SR','SJ','SZ','SE','CH','SY','TJ',
                     'TW','TZ','TH','TG','TK','TO','TT','TN','TR','TM',
-                    'TC','TV','UG','UA','AE','GB','US','UY','UM','UZ',
+                    'TC','TV','UG','UA','AE','US','UY','UM','UZ',
                     'VU','VA','VE','VN','VG','VI','WF','EH','YE','ZM',
                     'ZW'
   end
