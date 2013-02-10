@@ -19,7 +19,7 @@ module I18nCountrySelect
 
       if options[:include_blank]
         option = options[:include_blank] == true ? "" : options[:include_blank]
-        countries += "<option value=\"\">#{option}</options>\n"
+        countries += "<option>#{option}</option>\n"
       end
 
       if priority_countries
