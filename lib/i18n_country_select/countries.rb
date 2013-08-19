@@ -10,7 +10,7 @@ module I18nCountrySelect
                     'FR','FX','TF','GA','GM','GE','DE','GH','GI','GB',
                     'GR','GL','GD','GP','GU','GT','GN','GW','GY','GF',
                     'HT','HM','HN','HK','HU','IS','IN','ID','IR','IQ',
-                    'IE','IE','IL','IT','CI','JM','JP','JO','KZ','KE',
+                    'IE','IL','IT','CI','JM','JP','JO','KZ','KE',
                     'KG','KI','KP','KR','KW','LA','LV','LB','LS','LR',
                     'LY','LI','LT','LU','MO','MG','MW','MY','MV','ML',
                     'MT','MH','MQ','MR','MU','MX','FM','MD','MC','MN',
