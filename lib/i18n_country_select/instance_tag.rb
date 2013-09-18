@@ -13,7 +13,7 @@ module I18nCountrySelect
       country_translations = country_translations = COUNTRY_CODES.map do |code|
         translation = I18n.t(code, :scope => :countries, :default => 'missing')
         translation == 'missing' ? nil : [translation, code]
-      end.compact.sort_alphabetical_by(&:first)
+      end.compact.sort_by(&:first)
 
       countries = ""
 

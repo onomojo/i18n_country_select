@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.5'
   s.add_dependency('i18n', '~> 0.5')
   s.add_dependency('i18n-country-translations', ">= 0.0.9")
-  s.add_dependency('sort_alphabetical', ">= 0.1.3")
   s.add_development_dependency "rails", ">= 3.0.0"
   s.add_development_dependency "rspec-rails", ">= 2.7.0"
   s.add_development_dependency "spork", "~> 1.0rc"

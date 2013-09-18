@@ -1,3 +1,4 @@
+# coding: utf-8
 require "spec_helper"
 
 describe "Form Helpers" do
@@ -45,6 +46,23 @@ describe "Form Helpers" do
     it "should not contain missing translations" do
       output = country_code_select(:user, :country, [ "US", "United States" ], {}, :class => "custom_class")
       output.should_not match(/translation missing/)
+    end
+
+    describe "sorting order" do
+      context "en" do
+        it "should sort countries in right order" do
+          country_code_select(:user, :country).should match /American Samoa.+Jamaica.+Ukraine/m
+        end
+      end
+
+      context "ru" do
+        before { I18n.locale = :ru }
+        after  { I18n.locale = :en }
+
+        it "should sort countries in right order" do
+          country_code_select(:user, :country).should match /Американское Самоа.+Украина.+Ямайка/m
+        end
+      end
     end
   end
 end
