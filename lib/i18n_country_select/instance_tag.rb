@@ -13,7 +13,9 @@ module I18nCountrySelect
       country_translations = country_translations = COUNTRY_CODES.map do |code|
         translation = I18n.t(code, :scope => :countries, :default => 'missing')
         translation == 'missing' ? nil : [translation, code]
-      end.compact.sort_alphabetical_by(&:first)
+      end.compact.sort_by do |translation, code|
+        normalize_translation(translation)
+      end
 
       countries = ""
 
@@ -34,5 +36,12 @@ module I18nCountrySelect
 
       content_tag(:select, countries.html_safe, html_options)
     end
+
+    private
+      def normalize_translation(translation)
+        UnicodeUtils.canonical_decomposition(translation).split('').select do |c|
+          UnicodeUtils.general_category(c) =~ /Letter|Separator|Punctuation|Number/
+        end.join
+      end
   end
 end
