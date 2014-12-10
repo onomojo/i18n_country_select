@@ -103,6 +103,7 @@ module I18nCountrySelect
       HR
       HT
       HU
+      IC
       ID
       IE
       IL
