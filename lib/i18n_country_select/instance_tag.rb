@@ -19,12 +19,14 @@ module I18nCountrySelect
         countries += "<option>#{option}</option>\n"
       end
 
+      codes_to_ignore = []
       if priority_countries
         countries += options_for_select(priority_countries, selected)
         countries += "<option value=\"\" disabled=\"disabled\">-------------</option>\n"
+        codes_to_ignore = priority_countries.map {|c| c.second.to_sym}
       end
 
-      countries = countries + options_for_select(country_translations, selected)
+      countries = countries + options_for_select(country_translations(codes_to_ignore), selected)
 
       html_options = html_options.stringify_keys
       add_default_name_and_id(html_options)
@@ -32,10 +34,12 @@ module I18nCountrySelect
       content_tag(:select, countries.html_safe, html_options)
     end
 
-    def country_translations
+    def country_translations(codes_to_ignore = [])
       Thread.current[:country_translations] ||= {}
       Thread.current[:country_translations][I18n.locale] ||= begin
-        (I18n.t 'countries').keys.map do |code|
+        codes = (I18n.t 'countries').keys
+        codes -= codes_to_ignore
+        codes.map do |code|
           translation = I18n.t(code, :scope => :countries, :default => 'missing')
           translation == 'missing' ? nil : [translation, code]
         end.compact.sort_by do |translation, code|
