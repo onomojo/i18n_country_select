@@ -3,3 +3,5 @@
 .DS_Store
 Gemfile.lock
 pkg/*
+log
+tmp
